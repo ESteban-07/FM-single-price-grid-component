@@ -1,0 +1,131 @@
+/* Typografy */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 47%, 52%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+.grid-container {
+    width: 100vw;
+    min-height: 100vh;
+    background: var(--light-gray);
+    display: grid;
+    place-items: center;
+}
+
+.grid-wrapper {
+    width: 85%;
+    max-width: 620px;
+    margin: 50px auto;
+    display: grid;
+    grid-auto-rows: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comunity {
+    background: var(--white);
+    padding: 25px 20px;
+}
+
+.comunity__title {
+    color: var(--cyan);
+    /* font-size: 16px; */
+}
+
+.comunity__sub-title {
+    color: var(--bright-yellow);
+    margin: 15px 0;
+    /* font-size: 14px; */
+}
+
+.comunity__text {
+    color: var(--grayish-blue);
+    /* font-size: 12px;
+    line-height: 1.5;
+    white-space: pre-line; */
+}
+
+.suscription {
+    padding: 25px 20px;
+    background: var(--cyan);
+    color: var(--white);
+}
+
+.suscription .price {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin: 10px 0 5px;
+}
+
+.price .plan {
+    color: var(--light-gray);
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.suscription .btn {
+    width: 100%;
+    color: var(--white);
+    cursor: pointer;
+    background: var(--bright-yellow);
+    border: none;
+    box-shadow: 0px 5px 14px -5px rgb(0 0 0 / 50%);
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 15px;
+    padding: 15px 0;
+}
+
+.about {
+    padding: 25px 20px;
+    background: var(--light-cyan);
+    color: var(--white);
+}
+
+.about__text {
+    color: #90dee1;
+    white-space: pre-line;
+}
+
+@media only screen and (min-width: 700px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, auto);
+    }
+    .comunity,
+    .suscription,
+    .about {
+        padding: 30px;
+    }
+    .comunity {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .suscription {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
